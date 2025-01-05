@@ -1,0 +1,17 @@
+{% include "badges/apps/badges/settings/partials/common.py" %}
+
+FEATURES["BADGES_ENABLED"] = True
+
+EVENT_BUS_PRODUCER_CONFIG["org.openedx.learning.course.passing.status.updated.v1"] = {
+    "learning-badges-lifecycle": {
+        "event_key_field": "course_passing_status.course.course_key",
+        "enabled": True,
+    },
+}
+
+EVENT_BUS_PRODUCER_CONFIG["org.openedx.learning.ccx.course.passing.status.updated.v1"] = {
+    "learning-badges-lifecycle": {
+        "event_key_field": "course_passing_status.course.ccx_course_key",
+        "enabled": True,
+    },
+}

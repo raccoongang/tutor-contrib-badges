@@ -1,0 +1,3 @@
+MFE_CONFIG_OVERRIDES.setdefault("learner-record", {}).update({
+    "ENABLE_VERIFIABLE_CREDENTIALS": "true"
+})

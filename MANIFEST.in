@@ -1,0 +1,2 @@
+recursive-include tutorbadges/patches *
+recursive-include tutorbadges/templates *
