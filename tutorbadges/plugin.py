@@ -1,12 +1,33 @@
 import os
 from glob import glob
+from typing import Callable
 
 import click
 import importlib_resources
-from tutor import hooks
+from tutor import exceptions, hooks
+from tutor.plugins import is_loaded
 
 from .__about__ import __version__
 from .constants import EVENT_BUS_BACKEND_KAFKA, EVENT_BUS_BACKEND_REDIS
+
+
+REQUIRED_PLUGINS = ("credentials",)
+
+
+@hooks.Filters.ENV_PATCHES.add()
+def check_required_plugins_enabled(env: list[tuple[str, str]]) -> list[tuple[str, str]]:
+    """
+    Checks if the plugins that depend on this plugin are enabled.
+
+    If the corresponding plugin is not enabled, returns an error.
+    """
+    for required_plugin in REQUIRED_PLUGINS:
+        if not is_loaded(required_plugin):
+            raise exceptions.TutorError(
+                f"Cannot enable 'badges' because '{required_plugin}' is disabled or not installed.\n"
+                f"Please run: tutor plugins enable {required_plugin}"
+            )
+    return env
 
 
 hooks.Filters.CONFIG_DEFAULTS.add_items(
