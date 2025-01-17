@@ -34,7 +34,6 @@ hooks.Filters.CONFIG_DEFAULTS.add_items(
     [
         # Add your new settings that have default values here.
         # Each new setting is a pair: (setting_name, default_value).
-        # Prefix your setting names with 'BADGES_'.
         #
         # Badges settings
         ("BADGES_VERSION", __version__),
