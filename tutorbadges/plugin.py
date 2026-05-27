@@ -39,6 +39,7 @@ hooks.Filters.CONFIG_DEFAULTS.add_items(
         ("BADGES_VERSION", __version__),
         ("BADGES_CREDLY_USE_SANDBOX", False),
         ("BADGES_ACCREDIBLE_USE_SANDBOX", False),
+        ("BADGES_ACCREDIBLE_API_BASE_URL", "https://api.accredible.com/v1/"),
         ("BADGES_DEBUG", False),
         # Event Bus settings
         ("EVENT_BUS_BACKEND", EVENT_BUS_BACKEND_REDIS),
