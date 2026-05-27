@@ -45,6 +45,8 @@ setup(
     extras_require={
         "dev": [
             "tutor[dev]>=21.0.0,<22.0.0",
+            "pylint",
+            "black",
         ]
     },
     entry_points={
