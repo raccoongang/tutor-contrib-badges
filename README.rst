@@ -80,7 +80,8 @@ Usage
         docker pull overhangio/openedx-credentials:21.0.2
 
     Alternatively, set ``CREDENTIALS_REPOSITORY_VERSION: release/ulmo.2`` in your
-    ``config.yml`` before building.
+    ``config.yml`` before building. Remove this override once ``tutor-credentials>=21.0.3``
+    is released — it should be compatible with ``release/ulmo.3``.
 
 The following additional services are added:
 
