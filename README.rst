@@ -67,8 +67,20 @@ Usage
     tutor plugins enable credentials
     tutor plugins enable discovery
     tutor plugins enable badges
-    tutor images build openedx discovery credentials
+    tutor images build openedx discovery
     tutor local launch
+
+.. warning::
+
+    Building the ``credentials`` image locally may fail on Tutor 21.x (Ulmo) due to a patch
+    that is already included in ``release/ulmo.3``. Use the pre-built image instead:
+
+    .. code-block:: bash
+
+        docker pull overhangio/openedx-credentials:21.0.2
+
+    Alternatively, set ``CREDENTIALS_REPOSITORY_VERSION: release/ulmo.2`` in your
+    ``config.yml`` before building.
 
 The following additional services are added:
 
