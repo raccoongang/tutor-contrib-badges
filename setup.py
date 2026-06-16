@@ -41,10 +41,12 @@ setup(
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
     python_requires=">=3.9",
-    install_requires=["tutor>=19.0.0,<20.0.0"],
+    install_requires=["tutor>=21.0.0,<22.0.0"],
     extras_require={
         "dev": [
-            "tutor[dev]>=19.0.0,<20.0.0",
+            "tutor[dev]>=21.0.0,<22.0.0",
+            "pylint",
+            "black",
         ]
     },
     entry_points={
